@@ -9,6 +9,7 @@ use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider;
 use Doctrine\ORM\EntityManager;
 use AppBundle\Entity\SocialLoginId;
 use AppBundle\Entity\UserSystem;
+use AppBundle\Entity\User;
 
 /**
  * Description of UserAuthorizationService
@@ -83,7 +84,7 @@ class UserAuthorizationService extends OAuthUserProvider implements OAuthAwareUs
     }
     
     private function createUserInterfaceInstance($userId, $name){
-        $user = new UserSystem();
+        $user = new User();
         $user->setIsActive(true);
         $user->setName($name);
         $user->setUserId($userId);

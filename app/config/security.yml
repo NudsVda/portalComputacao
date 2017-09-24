@@ -6,7 +6,7 @@ security:
             memory: ~
             
         administrators:
-            entity: { class: AppBundle:UserSystem } 
+            entity: { class: AppBundle:User } 
             
         my_custom_hwi_provider:
             id: my.oauth_aware.user_provider.service
