@@ -40,7 +40,7 @@ class UserAuthorizationService extends OAuthUserProvider implements OAuthAwareUs
             throw new AccountNotLinkedException($responseData['error']['message']);
         }
         
-        if ( ! in_array($serviceName, ['google'])){
+        if ( ! in_array($serviceName, ['google', 'facebook'])){
             throw new \Exception('O serviço ' . $serviceName . ' não está configurado ainda');
         }
         
