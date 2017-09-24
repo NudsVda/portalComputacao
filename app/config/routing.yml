@@ -2,6 +2,8 @@ app:
     resource: '@AppBundle/Controller/'
     type: annotation
 
+logout:
+    path:   /logout
 
 # OAuth 2.0
 hwi_oauth_redirect:
