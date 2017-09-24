@@ -1,7 +1,7 @@
 portalComputacao
 ================
 
-###Para utilizar este repositório, siga os seguintes passos:
+### Para utilizar este repositório, siga os seguintes passos:
 
 * Clone o repositório
 * Instale o apache2
