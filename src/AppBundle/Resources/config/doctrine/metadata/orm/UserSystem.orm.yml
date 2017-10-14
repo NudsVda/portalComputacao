@@ -30,4 +30,21 @@ UserSystem:
             nullable: true
             length: 45
             fixed: false
+    manyToMany:
+        comment:
+            targetEntity: Comment
+            cascade: {  }
+            mappedBy: null
+            inversedBy: userSystem
+            joinTable:
+                name: ranking_votes
+                joinColumns:
+                    -
+                        name: user_system_id
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    -
+                        name: comment_id
+                        referencedColumnName: id
+            orderBy: null
     lifecycleCallbacks: {  }
