@@ -7,3 +7,7 @@ services:
     my.oauth_aware.user_provider.service:
         class: AppBundle\Service\User\UserAuthorizationService
         arguments: ["@doctrine.orm.entity_manager"]
+
+    comment_service:
+        class: AppBundle\Service\CommentService
+        arguments: ["@doctrine.orm.entity_manager"]
