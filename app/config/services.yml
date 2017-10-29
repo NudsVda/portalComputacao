@@ -19,3 +19,7 @@ services:
     ranking_service:
         class: AppBundle\Service\RankingService
         arguments: ["@doctrine.orm.entity_manager"]
+    
+    post_find_service:
+        class: AppBundle\Service\PostFindService
+        arguments: ["@doctrine.orm.entity_manager"]
