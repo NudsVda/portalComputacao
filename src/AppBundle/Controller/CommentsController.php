@@ -29,6 +29,18 @@ class CommentsController extends Controller {
     }
     
     /**
+     * @Route("/addPostContent")
+     */
+    public function addPostContent(Request $request) {
+        $userSystem = $this->get('user_data_service')->getLoggedUser($this->getUser());
+        
+        $postId = $request->get('postId');
+        $content = $request->get('content');
+        
+        $this->get('comment_service')->addPostContent($userSystem, $postId, $content);
+    }
+    
+    /**
      * @Route("/addComment/{postId}")
      * @Method({"POST"})
      */

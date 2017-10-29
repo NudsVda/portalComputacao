@@ -37,6 +37,17 @@ class CommentService {
         return $post;
     }
     
+    public function addPostContent(UserSystem $userSystem, Comment $post, string $content) {
+        if ($post->getOwner() != $userSystem) {
+            throw new \Exception('Postagem não pertence ao usuário', '403');
+        }
+        
+        $post->setText($content);
+        
+        $this->em->persist($post);
+        $this->em->flush();
+    }
+    
     public function addNewComment(Comment $post, UserSystem $userSystem, $text) : Comment {
         $now = new \DateTime('now');
         
